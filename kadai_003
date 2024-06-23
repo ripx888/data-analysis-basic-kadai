@@ -1,0 +1,13 @@
+import numpy as np
+
+A = np.array([[0, 1], [1, 3], [4, 5]])
+B = np.array([[0, 1, 2, 3], [4, 5, 6, 7]])
+
+result = np.dot(A, B)
+
+print("A と B の行列の積:")
+print(result)
+
+max_value = np.max(result)
+print("行列の要素の最大値:")
+print(max_value)

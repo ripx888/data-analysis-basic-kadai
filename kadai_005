@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(nrows=2, ncols=3, tight_layout=True)
+
+y0 = [1, 2, -5, 2]
+axes[0, 0].plot(y0)
+
+
+x1 = np.linspace(0, 10, 100)
+y1 = np.sin(x1)
+axes[0, 1].plot(x1, y1)
+
+
+x2 = np.random.normal(0, 1, 100)
+axes[0, 2].hist(x2, bins=30)
+
+
+x3 = np.random.rand(50)
+y3 = np.random.rand(50)
+axes[1, 0].scatter(x3, y3)
+
+
+
+plt.show()

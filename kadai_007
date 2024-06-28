@@ -1,0 +1,22 @@
+!pip install japanize-matplotlib
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import japanize_matplotlib
+
+category_df = pd.read_csv('category.csv')
+
+df = pd.merge(df, category_df[['商品番号', 'カテゴリー']], how='inner', on='商品番号')
+
+category_counts = df['カテゴリー'].value_counts()
+
+category_counts.plot(kind='bar')
+
+plt.title('カテゴリーの出現頻度')
+plt.xlabel('カテゴリー')
+plt.ylabel('出現頻度')
+plt.show()
+
+statistics = df.groupby('商品番号')['注文数'].describe()
+
+print(statistics)
